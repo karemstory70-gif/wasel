@@ -1,4 +1,5 @@
  import 'package:flutter/material.dart';
+import 'package:wasel/feature/Acsses.dart';
 import 'package:wasel/feature/Auth/Widgets/CoustemAuthbutton.dart';
 import 'package:wasel/feature/Auth/Widgets/CoustemTextField.dart';
 
@@ -97,7 +98,13 @@ import 'package:wasel/feature/Auth/Widgets/CoustemTextField.dart';
                          isbassword: true
                      ),
                      SizedBox(height: 30,),
-                    CoustemAuthbutton(child: Center(child: Text('Next' , style: TextStyle(color: Colors.white),),)),
+                    CoustemAuthbutton(
+                       onPressed: (){
+
+                         Navigator.push(context, MaterialPageRoute(builder: (c)=> Accss()));
+
+                       },
+                        child: Center(child: Text('Next' , style: TextStyle(color: Colors.white),),)),
                      SizedBox(height: 50,),
                    ],
                  ),

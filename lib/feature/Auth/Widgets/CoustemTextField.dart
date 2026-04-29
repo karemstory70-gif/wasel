@@ -37,7 +37,7 @@ class _CoustemtextfieldState extends State<Coustemtextfield> {
       obscureText: _obscureText ,
       controller: widget.controller,
       decoration: InputDecoration(
-        contentPadding: EdgeInsets.symmetric(horizontal: 20),
+        contentPadding: EdgeInsets.symmetric(horizontal: 20 , vertical: 20),
         suffixIcon: _obscureText ? InkWell(
             onTap: () {
               setState(() {
