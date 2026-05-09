@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:wasel/core/Models/food_model.dart';
+import 'package:wasel/feature/Home/Screens/cart_screen.dart';
 
 class FoodDetails extends StatefulWidget {
   final FoodModel food;
@@ -301,7 +302,9 @@ class _FoodDetailsState extends State<FoodDetails> {
                     borderRadius: BorderRadius.circular(12),
                   ),
                 ),
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(context, MaterialPageRoute(builder: (_)=>cartScreen(),));
+                },
                 child: const Text(
                   "Add to cart",
                   style: TextStyle(

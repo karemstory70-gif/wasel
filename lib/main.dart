@@ -30,7 +30,7 @@ class MyApp extends StatelessWidget {
       ),
       debugShowCheckedModeBanner: false,
       title: 'wasel',
-      home: HomeController(),
+      home: Splach(),
     );
   }
 }

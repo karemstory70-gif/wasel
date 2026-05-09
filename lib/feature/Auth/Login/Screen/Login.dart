@@ -4,6 +4,7 @@ import 'package:wasel/feature/Auth/Verification/ForgetPassword.dart';
 import 'package:wasel/feature/Auth/Widgets/CoustemAuthbutton.dart';
 import 'package:wasel/feature/Auth/Widgets/CoustemTextField.dart';
 import 'package:wasel/feature/Home/Screens/Home1.dart';
+import 'package:wasel/feature/Home/Screens/home_controller.dart';
 
 import '../../../../core/Theme/AppColor.dart';
 
@@ -118,7 +119,7 @@ class _LoginPageState extends State<LoginPage> {
                     SizedBox(height: 10),
                     CoustemAuthbutton(
                       onPressed: () {
-                        Navigator.push(context,MaterialPageRoute(builder: (context)=> Home1()));
+                        Navigator.push(context,MaterialPageRoute(builder: (context)=> HomeController()));
                       },
                       child: Center(
                         child: Text(
