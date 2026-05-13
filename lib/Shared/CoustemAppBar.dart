@@ -1,4 +1,7 @@
  import 'package:flutter/material.dart';
+import 'package:wasel/feature/Menu/Screens/Menu.dart';
+import 'package:wasel/feature/Menu/Screens/PersonalInfo.dart';
+import 'package:wasel/feature/My%20orders/Screens/Myorders.dart';
 
 import '../core/Theme/AppColor.dart';
 
@@ -19,10 +22,118 @@ import '../core/Theme/AppColor.dart';
          children: [
            Container(
              decoration: BoxDecoration(
-                 color: Colors.grey.shade200,
-                 shape: BoxShape.circle
+               color: Colors.grey.shade200,
+               shape: BoxShape.circle,
              ),
-             child: IconButton(onPressed: (){}, icon: Icon(Icons.menu)),
+
+             child: IconButton(
+
+               icon: Icon(Icons.menu),
+
+               onPressed: () {
+
+                 showModalBottomSheet(
+
+                   context: context,
+
+                   shape: RoundedRectangleBorder(
+                     borderRadius: BorderRadius.vertical(
+                       top: Radius.circular(25),
+                     ),
+                   ),
+
+                   builder: (context){
+
+                     return Padding(
+
+                       padding: const EdgeInsets.all(20),
+
+                       child: Column(
+
+                         mainAxisSize: MainAxisSize.min,
+
+                         children: [
+
+                           Container(
+                             width: 50,
+                             height: 5,
+                             decoration: BoxDecoration(
+                               color: Colors.grey.shade300,
+                               borderRadius: BorderRadius.circular(20),
+                             ),
+                           ),
+
+                           SizedBox(height: 25),
+
+                           ListTile(
+
+                             leading: CircleAvatar(
+                               backgroundColor: Color(0xffFB6F3D),
+                               child: Icon(Icons.person,color: Colors.white),
+                             ),
+
+                             title: Text(
+                               'Myorders',
+                               style: TextStyle(fontWeight: FontWeight.w600),
+                             ),
+
+                             trailing: Icon(Icons.arrow_forward_ios,size: 16),
+
+                             onTap: (){
+
+                               Navigator.pop(context);
+
+                               Navigator.push(
+                                 context,
+                                 MaterialPageRoute(
+                                   builder: (context)=> Myorders(),
+                                 ),
+                               );
+
+                             },
+
+                           ),
+
+                           SizedBox(height: 10),
+
+                           ListTile(
+
+                             leading: CircleAvatar(
+                               backgroundColor: Color(0xff413DFB),
+                               child: Icon(Icons.badge,color: Colors.white),
+                             ),
+
+                             title: Text(
+                               'Personal Info',
+                               style: TextStyle(fontWeight: FontWeight.w600),
+                             ),
+
+                             trailing: Icon(Icons.arrow_forward_ios,size: 16),
+
+                             onTap: (){
+
+                               Navigator.pop(context);
+
+                               Navigator.push(
+                                 context,
+                                 MaterialPageRoute(
+                                   builder: (context)=> Personalinfo(),
+                                 ),
+                               );
+
+                             },
+
+                           ),
+
+                           SizedBox(height: 20),
+
+                         ],
+                       ),
+                     );
+                   },
+                 );
+               },
+             ),
            ),
            SizedBox(width: 10,),
            Column(
